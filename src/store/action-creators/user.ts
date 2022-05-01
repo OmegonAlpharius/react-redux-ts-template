@@ -1,6 +1,9 @@
 import axios from 'axios'
-import { Dispatch } from 'redux'
+import {  Dispatch } from 'redux'
+import { ThunkActionDispatch } from 'redux-thunk'
+
 import { UserAction, UserActionTypes } from '../../types/User'
+
 
 
 export const fetchUsers = () => {
