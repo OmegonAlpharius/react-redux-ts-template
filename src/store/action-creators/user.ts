@@ -1,13 +1,12 @@
 import axios from 'axios'
-import {  Dispatch } from 'redux'
-import { ThunkActionDispatch } from 'redux-thunk'
-
-import { UserAction, UserActionTypes } from '../../types/User'
+import { AppThunk } from '..'
+import {  UserActionTypes } from '../../types/User'
 
 
 
-export const fetchUsers = () => {
-	return async (dispatch:Dispatch<UserAction>) => {
+
+export const fetchUsers = ():AppThunk=> {
+	return async (dispatch) => {
  try {
 	dispatch({type:UserActionTypes.FETCH_USERS})
 	const response = await axios.get('https://jsonplaceholder.typicode.com/users')
