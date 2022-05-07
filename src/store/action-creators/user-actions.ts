@@ -10,7 +10,10 @@ export const fetchUsers = ():AppThunk=> {
  try {
 	dispatch({type:UserActionTypes.FETCH_USERS})
 	const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-	dispatch({type:UserActionTypes.FETCH_USERS_SUCCESS,payload:response.data})
+	setTimeout(() => {
+		dispatch({type:UserActionTypes.FETCH_USERS_SUCCESS,payload:response.data})
+	},500)
+
  } catch (e) {
 	dispatch({
 		type:UserActionTypes.FETCH_USERS_ERROR,
