@@ -9,6 +9,7 @@ const UserList: React.FC = () => {
    const dispatch =  useAppDispatch()
 	React.useEffect(() => {
 		dispatch(fetchUsers())
+
 	},[dispatch])
 
 
